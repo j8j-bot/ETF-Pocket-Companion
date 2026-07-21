@@ -277,10 +277,10 @@ const db = $('#distbar'); const tot=T.length;
   const el=document.createElement('span'); el.className=c;
   el.style.flex=n; el.textContent=n; db.appendChild(el);
 });
-const top = T[0];
-$('#topCode').textContent = top.code;
-$('#topName').textContent = top.name;
-$('#topNote').textContent = `${top.verdict} · score ${top.score>0?'+':''}${top.score}. ${top.reasons[0]}, ${top.reasons[1]}.`;
+const best = T[0];
+$('#topCode').textContent = best.code;
+$('#topName').textContent = best.name;
+$('#topNote').textContent = `${best.verdict} · score ${best.score>0?'+':''}${best.score}. ${best.reasons[0]}, ${best.reasons[1]}.`;
 
 /* ---------- sparkline drawing ---------- */
 function drawSpark(cv, series, tone){
