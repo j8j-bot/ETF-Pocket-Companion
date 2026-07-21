@@ -1,3 +1,4 @@
-Run 2026-07-21T05:58:07
+Run 2026-07-21T06:10:11
 No ANTHROPIC_API_KEY - using template descriptions.
-10/10 tickers, 6 signals, 0 anomalies, verdict=ok.
+10/10 tickers, 5 signals, 0 anomalies, verdict=ok.
+Rebuilt dashboard.html.

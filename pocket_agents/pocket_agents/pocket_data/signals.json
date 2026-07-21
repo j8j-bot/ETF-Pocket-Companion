@@ -1,15 +1,8 @@
 {
-  "generated": "2026-07-21T05:58:14",
+  "generated": "2026-07-21T06:10:19",
   "verdict": "ok",
   "escalate": false,
   "signals": [
-    {
-      "id": "IOZ-1",
-      "code": "IOZ",
-      "kind": "ma_cross_down",
-      "value": 35.17,
-      "text": "closed below its 50-day average (35.17)"
-    },
     {
       "id": "SYI-1",
       "code": "SYI",
@@ -21,29 +14,29 @@
       "id": "IEM-1",
       "code": "IEM",
       "kind": "price_move",
-      "value": 2.47,
-      "text": "moved +2.47% in the latest session"
+      "value": 2.74,
+      "text": "moved +2.74% in the latest session"
     },
     {
       "id": "NDQ-1",
       "code": "NDQ",
       "kind": "rsi_extreme",
-      "value": 25,
-      "text": "14-day RSI at 25"
+      "value": 26,
+      "text": "14-day RSI at 26"
     },
     {
       "id": "ETHI-1",
       "code": "ETHI",
       "kind": "rsi_extreme",
-      "value": 28,
-      "text": "14-day RSI at 28"
+      "value": 29,
+      "text": "14-day RSI at 29"
     },
     {
       "id": "DHHF-1",
       "code": "DHHF",
       "kind": "ma_cross_up",
-      "value": 41.01,
-      "text": "closed above its 50-day average (41.01)"
+      "value": 41.02,
+      "text": "closed above its 50-day average (41.02)"
     }
   ],
   "anomalies": [],

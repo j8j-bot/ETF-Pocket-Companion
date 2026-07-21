@@ -309,6 +309,16 @@ def main():
          "qa_source": qa["source"]}, indent=2))
     log.append(f"{len(ok_codes)}/10 tickers, {len(signals)} signals, "
                f"{len(anomalies)} anomalies, verdict={qa['verdict']}.")
+
+    # Refresh the opportunity dashboard from this run (best-effort; a broken
+    # dashboard build must never fail the data pipeline).
+    try:
+        import build_dashboard
+        build_dashboard.build()
+        log.append("Rebuilt dashboard.html.")
+    except Exception as e:  # noqa: BLE001
+        log.append(f"Dashboard rebuild skipped: {e}")
+
     (OUT / "qa_log.txt").write_text("\n".join(log))
     print("\n".join(log))
 
