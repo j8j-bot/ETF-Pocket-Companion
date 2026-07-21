@@ -1,0 +1,138 @@
+{
+  "digest": "IOZ close=35.17 chg=-0.14% volx=0.6 rsi=57 date=2026-07-21 rows=279\nSYI close=30.39 chg=-0.72% volx=1.3 rsi=66 date=2026-07-21 rows=279\nIOO close=194.41 chg=0.09% volx=0.7 rsi=54 date=2026-07-21 rows=279\nIEM close=93.03 chg=2.23% volx=1.0 rsi=37 date=2026-07-21 rows=280\nNDQ close=59.89 chg=0.57% volx=0.8 rsi=25 date=2026-07-21 rows=280\nIXJ close=138.46 chg=-0.88% volx=0.8 rsi=43 date=2026-07-21 rows=279\nETHI close=16.77 chg=-0.18% volx=0.3 rsi=28 date=2026-07-21 rows=280\nDHHF close=41.0 chg=0.1% volx=0.7 rsi=35 date=2026-07-21 rows=280\nGRNV close=30.95 chg=0.85% volx=1.1 rsi=49 date=2026-07-21 rows=279\nCRED close=22.76 chg=0.13% volx=0.7 rsi=36 date=2026-07-21 rows=279",
+  "allowed_numbers": [
+    "-0.14",
+    "-0.18",
+    "-0.72",
+    "-0.88",
+    "0.09",
+    "0.1",
+    "0.13",
+    "0.14",
+    "0.18",
+    "0.3",
+    "0.57",
+    "0.6",
+    "0.7",
+    "0.72",
+    "0.8",
+    "0.85",
+    "0.88",
+    "1",
+    "1.1",
+    "1.3",
+    "138.46",
+    "14",
+    "16.77",
+    "194.41",
+    "2",
+    "2.23",
+    "20",
+    "22.76",
+    "25",
+    "279",
+    "28",
+    "280",
+    "30",
+    "30.39",
+    "30.49",
+    "30.95",
+    "35",
+    "35.17",
+    "36",
+    "37",
+    "41",
+    "43",
+    "49",
+    "50",
+    "54",
+    "57",
+    "59.89",
+    "66",
+    "70",
+    "93.03"
+  ],
+  "checksum": "cb50bb41",
+  "stats": {
+    "IOZ": {
+      "close": 35.17,
+      "chg": -0.14,
+      "vol_ratio": 0.6,
+      "rsi": 57,
+      "last_date": "2026-07-21",
+      "rows": 279
+    },
+    "SYI": {
+      "close": 30.39,
+      "chg": -0.72,
+      "vol_ratio": 1.3,
+      "rsi": 66,
+      "last_date": "2026-07-21",
+      "rows": 279
+    },
+    "IOO": {
+      "close": 194.41,
+      "chg": 0.09,
+      "vol_ratio": 0.7,
+      "rsi": 54,
+      "last_date": "2026-07-21",
+      "rows": 279
+    },
+    "IEM": {
+      "close": 93.03,
+      "chg": 2.23,
+      "vol_ratio": 1.0,
+      "rsi": 37,
+      "last_date": "2026-07-21",
+      "rows": 280
+    },
+    "NDQ": {
+      "close": 59.89,
+      "chg": 0.57,
+      "vol_ratio": 0.8,
+      "rsi": 25,
+      "last_date": "2026-07-21",
+      "rows": 280
+    },
+    "IXJ": {
+      "close": 138.46,
+      "chg": -0.88,
+      "vol_ratio": 0.8,
+      "rsi": 43,
+      "last_date": "2026-07-21",
+      "rows": 279
+    },
+    "ETHI": {
+      "close": 16.77,
+      "chg": -0.18,
+      "vol_ratio": 0.3,
+      "rsi": 28,
+      "last_date": "2026-07-21",
+      "rows": 280
+    },
+    "DHHF": {
+      "close": 41.0,
+      "chg": 0.1,
+      "vol_ratio": 0.7,
+      "rsi": 35,
+      "last_date": "2026-07-21",
+      "rows": 280
+    },
+    "GRNV": {
+      "close": 30.95,
+      "chg": 0.85,
+      "vol_ratio": 1.1,
+      "rsi": 49,
+      "last_date": "2026-07-21",
+      "rows": 279
+    },
+    "CRED": {
+      "close": 22.76,
+      "chg": 0.13,
+      "vol_ratio": 0.7,
+      "rsi": 36,
+      "last_date": "2026-07-21",
+      "rows": 279
+    }
+  }
+}

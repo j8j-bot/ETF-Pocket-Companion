@@ -1,0 +1,45 @@
+{
+  "generated": "2026-07-21T05:45:04",
+  "verdict": "ok",
+  "escalate": false,
+  "signals": [
+    {
+      "id": "IOZ-1",
+      "code": "IOZ",
+      "kind": "ma_cross_down",
+      "value": 35.17,
+      "text": "closed below its 50-day average (35.17)"
+    },
+    {
+      "id": "SYI-1",
+      "code": "SYI",
+      "kind": "ma_cross_down",
+      "value": 30.49,
+      "text": "closed below its 50-day average (30.49)"
+    },
+    {
+      "id": "IEM-1",
+      "code": "IEM",
+      "kind": "price_move",
+      "value": 2.23,
+      "text": "moved +2.23% in the latest session"
+    },
+    {
+      "id": "NDQ-1",
+      "code": "NDQ",
+      "kind": "rsi_extreme",
+      "value": 25,
+      "text": "14-day RSI at 25"
+    },
+    {
+      "id": "ETHI-1",
+      "code": "ETHI",
+      "kind": "rsi_extreme",
+      "value": 28,
+      "text": "14-day RSI at 28"
+    }
+  ],
+  "anomalies": [],
+  "anomaly_reads": [],
+  "qa_source": "template"
+}
