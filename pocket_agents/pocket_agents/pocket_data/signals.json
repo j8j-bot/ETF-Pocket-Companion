@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-21T05:45:04",
+  "generated": "2026-07-21T05:58:14",
   "verdict": "ok",
   "escalate": false,
   "signals": [
@@ -14,15 +14,15 @@
       "id": "SYI-1",
       "code": "SYI",
       "kind": "ma_cross_down",
-      "value": 30.49,
-      "text": "closed below its 50-day average (30.49)"
+      "value": 30.5,
+      "text": "closed below its 50-day average (30.5)"
     },
     {
       "id": "IEM-1",
       "code": "IEM",
       "kind": "price_move",
-      "value": 2.23,
-      "text": "moved +2.23% in the latest session"
+      "value": 2.47,
+      "text": "moved +2.47% in the latest session"
     },
     {
       "id": "NDQ-1",
@@ -37,6 +37,13 @@
       "kind": "rsi_extreme",
       "value": 28,
       "text": "14-day RSI at 28"
+    },
+    {
+      "id": "DHHF-1",
+      "code": "DHHF",
+      "kind": "ma_cross_up",
+      "value": 41.01,
+      "text": "closed above its 50-day average (41.01)"
     }
   ],
   "anomalies": [],
