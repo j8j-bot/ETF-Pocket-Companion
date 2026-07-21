@@ -12,7 +12,7 @@ Design principle (anti-hallucination by construction):
   * On any validation failure the pipeline falls back to deterministic
     template text. The LLM can improve the output; it can never corrupt it.
 
-Setup:  pip install yfinance pandas requests
+Setup:  pip install pandas requests
         export ANTHROPIC_API_KEY=sk-ant-...   (optional; omit to skip Haiku)
 Run:    python pipeline.py
 Out:    pocket_data/ALL.csv, pocket_data/signals.json, pocket_data/qa_log.txt
@@ -24,12 +24,12 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
 import pandas as pd
 import requests
-import yfinance as yf
 
 CODES = ["IOZ", "SYI", "IOO", "IEM", "NDQ", "IXJ", "ETHI", "DHHF", "GRNV", "CRED"]
 OUT = Path("pocket_data")
@@ -42,21 +42,52 @@ HAIKU_MODEL = "claude-haiku-4-5-20251001"
 MAX_QA_OUTPUT_TOKENS = 500          # hard cap: QA never needs more
 API_URL = "https://api.anthropic.com/v1/messages"
 
+# Yahoo's chart endpoint, called directly with a plain requests session.
+# (yfinance's curl_cffi backend impersonates a browser TLS fingerprint to
+# dodge Yahoo's bot detection; that impersonation can't complete a handshake
+# through a MITM-style egress proxy that re-terminates TLS. A vanilla
+# requests call with a normal User-Agent hits the same public endpoint and
+# works fine through such proxies.)
+CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+CHART_HEADERS = {
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
+}
+
 
 # ----------------------------------------------------------------------
 # Deterministic layer: fetch + indicators (no LLM anywhere here)
 # ----------------------------------------------------------------------
 
+def fetch_one(code):
+    end = int(time.time())
+    start = end - 400 * 86400  # buffer beyond 1y for weekends/holidays
+    r = requests.get(CHART_URL.format(symbol=f"{code}.AX"),
+                      params={"period1": start, "period2": end, "interval": "1d"},
+                      headers=CHART_HEADERS, timeout=20)
+    r.raise_for_status()
+    result = r.json()["chart"]["result"][0]
+    gmtoffset = result["meta"].get("gmtoffset", 0)
+    quote = result["indicators"]["quote"][0]
+    rows = []
+    for ts, close, vol in zip(result["timestamp"], quote["close"], quote["volume"]):
+        if close is None or vol is None:
+            continue
+        date = datetime.utcfromtimestamp(ts + gmtoffset).strftime("%Y-%m-%d")
+        rows.append((date, close, vol))
+    return pd.DataFrame(rows, columns=["Date", "Close", "Volume"])
+
+
 def fetch_all():
     data = {}
     for code in CODES:
-        df = yf.download(f"{code}.AX", period="1y", interval="1d",
-                         auto_adjust=False, progress=False)
-        if isinstance(df.columns, pd.MultiIndex):
-            df.columns = df.columns.get_level_values(0)
-        df = df.reset_index()[["Date", "Close", "Volume"]].dropna()
-        df["Date"] = pd.to_datetime(df["Date"]).dt.strftime("%Y-%m-%d")
-        data[code] = df
+        try:
+            df = fetch_one(code)
+        except Exception as e:  # noqa: BLE001
+            print(f"Failed to get ticker '{code}.AX' reason: {e}")
+            continue
+        if not df.empty:
+            data[code] = df
     return data
 
 

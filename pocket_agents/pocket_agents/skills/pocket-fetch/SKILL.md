@@ -16,7 +16,11 @@ computes all indicators in Python, runs a Haiku QA pass, and writes:
 - `pocket_data/qa_log.txt` — what happened this run
 
 ## Procedure
-1. Ensure deps: `pip install yfinance pandas requests`.
+1. Ensure deps: `pip install pandas requests`. (No `yfinance` — prices come
+   straight from Yahoo's public chart endpoint via plain `requests`, since
+   yfinance's curl_cffi TLS-fingerprint impersonation can't complete a
+   handshake through a MITM-style egress proxy such as a Claude Code cloud
+   environment's.)
 2. `ANTHROPIC_API_KEY` env var enables the Haiku QA layer. Without it the
    pipeline still runs and uses deterministic template text — that is fine,
    never block on a missing key.
