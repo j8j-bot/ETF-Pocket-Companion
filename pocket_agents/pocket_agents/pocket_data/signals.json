@@ -1,42 +1,35 @@
 {
-  "generated": "2026-07-21T06:10:19",
+  "generated": "2026-07-30T05:13:59",
   "verdict": "ok",
   "escalate": false,
   "signals": [
     {
       "id": "SYI-1",
       "code": "SYI",
-      "kind": "ma_cross_down",
-      "value": 30.5,
-      "text": "closed below its 50-day average (30.5)"
-    },
-    {
-      "id": "IEM-1",
-      "code": "IEM",
-      "kind": "price_move",
-      "value": 2.74,
-      "text": "moved +2.74% in the latest session"
+      "kind": "rsi_extreme",
+      "value": 71,
+      "text": "14-day RSI at 71"
     },
     {
       "id": "NDQ-1",
       "code": "NDQ",
       "kind": "rsi_extreme",
-      "value": 26,
-      "text": "14-day RSI at 26"
-    },
-    {
-      "id": "ETHI-1",
-      "code": "ETHI",
-      "kind": "rsi_extreme",
-      "value": 29,
-      "text": "14-day RSI at 29"
+      "value": 18,
+      "text": "14-day RSI at 18"
     },
     {
       "id": "DHHF-1",
       "code": "DHHF",
-      "kind": "ma_cross_up",
-      "value": 41.02,
-      "text": "closed above its 50-day average (41.02)"
+      "kind": "ma_cross_down",
+      "value": 41.2,
+      "text": "closed below its 50-day average (41.2)"
+    },
+    {
+      "id": "CRED-1",
+      "code": "CRED",
+      "kind": "ma_cross_down",
+      "value": 22.83,
+      "text": "closed below its 50-day average (22.83)"
     }
   ],
   "anomalies": [],
